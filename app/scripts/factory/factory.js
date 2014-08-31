@@ -5,7 +5,7 @@ angular.module('hearthstoneApp')
         var myService = {
 		    getData: function() {
 		    	var result = [];
-		      	var promise = $http.get('/AllSets.json').then(function (response) {
+		      	var promise = $http.get('AllSets.json').then(function (response) {
 		        	return response.data;
 		      	});
 		      	return promise;
