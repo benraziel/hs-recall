@@ -1,1 +1,9 @@
+<<<<<<< HEAD
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+=======
 .idea/
+>>>>>>> c604861ee4404575893ef6afcf0155c3425e99d4
