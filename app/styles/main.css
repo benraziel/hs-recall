@@ -1,0 +1,96 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.flip-container {
+  margin-top: 100px;
+  position:relative;
+  -webkit-perspective:1000;
+  perspective:1000;
+}
+
+.flip-container, .card-front, .card-back, .card-front-name {
+  width: 307px;
+  height: 465px;
+}
+
+.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+.card {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card .flipped {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+}
+
+.card-front, .card-back, .card-front-name {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-back {
+  z-index: 2;
+  background-repeat: no-repeat;  
+}
+
+.card-front-name {
+  z-index: 1; 
+}
+
+.card-front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.prev, .next {
+  font-size: 64px;
+  font-weight: 600;
+  color: #926239;
+  position: absolute;
+  top: 48%;
+  cursor: pointer;
+}
+
+.prev {
+  left: 25%;
+}
+
+.next {
+  right: 25%;
+}
+
+.prev:hover, .next:hover {
+  color: #9c714c;
+}
+
+.error {
+  font-size: 24px;
+  color: red;
+  text-align: center;
+}
