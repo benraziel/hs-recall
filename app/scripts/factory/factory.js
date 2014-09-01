@@ -44,7 +44,7 @@ angular.module('hearthstoneApp')
 
 	  		getPrevCard : function(currentCard) {
 	  			return myService.usedCardList[currentCard.index - 1];	
-	  		},
+	  		}
 		};
 		return myService;
     });
