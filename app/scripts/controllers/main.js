@@ -8,7 +8,7 @@ angular.module('hearthstoneApp')
 	  	$scope.errorMessage = false;
 
 	  	HearthstoneService.getData().then(function(data) {
-	  		$scope.cards = HearthstoneService.flattenJson(data, $scope.categories);
+	  		$scope.cards = HearthstoneService.shuffle(HearthstoneService.flattenJson(data, $scope.categories));
 	  		$scope.cardPositions = HearthstoneService.generateCardList($scope.cards.length);
 	  		$scope.currentPosition= 0 ;
 	  		$scope.currentCard = $scope.cards[$scope.cardPositions[0]];
