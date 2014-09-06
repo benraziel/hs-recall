@@ -22,8 +22,14 @@ angular.module('hearthstoneApp')
 	  					if (filterOutByType || nonCollectable) {
 	  						return;
 	  					}
+
+				                        if (!card.playerClass) {
+				                            card.playerClass = 'Neutral';
+				                        }
+
 	  					card.category = categories[i];
 	  					card.active = false;
+
 	  					result.push(card);
 	  				});
 	  			}

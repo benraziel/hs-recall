@@ -101,3 +101,7 @@ body {
   -ms-backface-visibility: visible !important;
   backface-visibility: visible !important;
 }
+.card-player-class {
+    width: 195px;
+    height: 75px;
+}
