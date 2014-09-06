@@ -94,3 +94,11 @@ body {
   color: red;
   text-align: center;
 }
+
+.modal-body label {
+    padding-right: 15px;
+}
+
+.modal-body .control-label {
+    font-size: 18px;
+}

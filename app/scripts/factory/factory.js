@@ -29,22 +29,26 @@ angular.module('hearthstoneApp')
 	  			return result;	
 	  		},
 
-	  		generateCardList: function(numCards) {
-	  			var result = [];
-	  			for(var i = 0; i < numCards; i++) {
-	  				var cardIndex = Math.floor(Math.random()*numCards);
-	  				result.push(cardIndex);	
-	  			}
-	  			return result;
-	  		},
+            filterCards: function(cards, filter) {
+                var result = [];
 
-	  		getLastCard : function(currentCard) {
-	  			return myService.usedCardList[currentCard.index - 1];	
-	  		},
+                cards.forEach(function(element, index, array) {
+                    //console.log("filter class: ",filter.class);
+                    //console.log("element class: ",element.playerClass);
+                    //console.log("filter.category[element.category]: ",filter.category[element.category]);
 
-	  		getPrevCard : function(currentCard) {
-	  			return myService.usedCardList[currentCard.index - 1];	
-	  		},
+                    if (filter.type[element.type] &&
+                        (filter.class[element.playerClass] || filter.class["Neutral"]) &&
+                        filter.category[element.category] &&
+                        filter.rarity[element.rarity]) {
+
+                        result.push(element)
+                    }
+                });
+
+                console.log("number of cards after filter: ",result.length);
+                return result;
+            },
 
 	  		shuffle: function(o) {
 	  			for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
