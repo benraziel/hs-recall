@@ -102,3 +102,8 @@ body {
 .modal-body .control-label {
     font-size: 18px;
 }
+
+.card-player-class {
+    width: 195px;
+    height: 75px;
+}
