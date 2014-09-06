@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hearthstoneApp')
-    .factory('HearthstoneService', function ($http) {  
+    .factory('HearthstoneService', function ($http) {
         var myService = {
 		    getData: function() {
 		    	var result = [];
@@ -11,22 +11,23 @@ angular.module('hearthstoneApp')
 		      	return promise;
 		    },
 
-		    flattenJson: function(data, categories) {	  			
+		    flattenJson: function(data, categories) {
 	  			var result = [];
 	  			var typesToFilter = ['Enchantment', 'Hero'];
 	  			for(var i=0; i < categories.length; i++) {
 	  				var cardsInCategory = data[categories[i]];
 	  				cardsInCategory.forEach(function(card) {
-	  					var filterOutByType = typesToFilter.indexOf(card.type) !== -1; 
+	  					var filterOutByType = typesToFilter.indexOf(card.type) !== -1;
 	  					var nonCollectable = card.collectible !== true;
 	  					if (filterOutByType || nonCollectable) {
-	  						return; 
+	  						return;
 	  					}
-	  					card.category = categories[i]; 
+	  					card.category = categories[i];
+	  					card.active = false;
 	  					result.push(card);
 	  				});
 	  			}
-	  			return result;	
+	  			return result;
 	  		},
 
             filterCards: function(cards, filter) {
@@ -52,7 +53,7 @@ angular.module('hearthstoneApp')
 
 	  		shuffle: function(o) {
 	  			for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	  			return o;	
+	  			return o;
 	  		},
 		};
 		return myService;

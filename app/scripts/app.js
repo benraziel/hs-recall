@@ -5,6 +5,8 @@ angular.module('hearthstoneApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngTouch',
+  'angular-carousel'
 ])
 

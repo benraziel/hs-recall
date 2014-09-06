@@ -17,16 +17,13 @@ hsApp.controller('FilterCtrl', ['$scope', '$modalInstance', 'activeFilter',
 
 hsApp.controller('MainCtrl', ['$scope', '$http', 'HearthstoneService', '$timeout', '$modal',
     function ($scope, $http, HearthstoneService, $timeout, $modal) {
-	  	$scope.categories = ['Reward', 'Promotion', 'Expert',
-	  		'Basic', 'Curse of Naxxramas'];
-	  	$scope.errorMessage = false;
+	$scope.categories = ['Reward', 'Promotion', 'Expert',
+	  	'Basic', 'Curse of Naxxramas'];
 
-	  	HearthstoneService.getData().then(function(data) {
+            HearthstoneService.getData().then(function(data) {
             $scope.allCards = HearthstoneService.flattenJson(data, $scope.categories);
 
             $scope.cards = HearthstoneService.shuffle($scope.allCards);
-	  		$scope.currentPosition = 0;
-            $scope.currentCard = $scope.cards[0];
 
             $scope.activeFilter = {
                 'category': {'Basic': true, 'Expert': true, 'Curse of Naxxramas': true, 'Reward': true, 'Promotion': true},
@@ -55,22 +52,20 @@ hsApp.controller('MainCtrl', ['$scope', '$http', 'HearthstoneService', '$timeout
                 }
 
                 $scope.cards = HearthstoneService.shuffle(HearthstoneService.filterCards($scope.allCards, $scope.activeFilter));
-                $scope.currentPosition = 0;
-                $scope.currentCard = $scope.cards[0];
 
             }, function () {
                 // modal dismissed (cancel button)
             });
         };
 
-        $scope.nextCard = function () {
+        /*$scope.nextCard = function () {
 	  		if ($scope.currentPosition === $scope.cards.length-1) {
 	  			$scope.currentPosition = 0;
 	  		}
 	  		else {
 	  			$scope.currentPosition++;
 	  		}
-	  		$scope.goToCard($scope.currentPosition);	  		
+	  		$scope.goToCard($scope.currentPosition);
 	  	};
 
 	  	$scope.prevCard = function () {
@@ -89,6 +84,5 @@ hsApp.controller('MainCtrl', ['$scope', '$http', 'HearthstoneService', '$timeout
 	  		$timeout(function(){
 	  			$scope.currentCard = $scope.cards[position];
 	  		}, delay);
-	  	};
-  }])
-;
+	  	};*/
+}]);
