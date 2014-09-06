@@ -13,7 +13,7 @@ body {
 
 .flip-container, .card-front, .card-back, .card-front-name {
   width: 307px;
-  height: 465px;
+  height: 520px;
 }
 
 .flipped {
@@ -57,6 +57,7 @@ body {
 
 .card-front-name {
   z-index: 1;
+  background-repeat: no-repeat;
 }
 
 .card-front {
@@ -76,6 +77,7 @@ body {
   opacity: 1;
   cursor: pointer;
   color:  #E9CAA7;
+  user-select: none;
 }
 
 .rn-carousel-control:hover {
@@ -104,4 +106,12 @@ body {
 .card-player-class {
     width: 195px;
     height: 75px;
+    position: relative;
+    top: 445px;
+    left: 56px;
+    visibility: hidden;
+}
+
+.card-player-class.active {
+  visibility: visible;
 }
