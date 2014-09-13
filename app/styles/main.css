@@ -35,11 +35,6 @@ body {
   position: relative;
 }
 
-/*.flipped {
-  transform: rotateY(-180deg);
-  -webkit-transform: rotateY(-180deg);
-}*/
-
 .card-front, .card-back, .card-front-name {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -69,19 +64,43 @@ body {
   z-index: 2;
 }
 
+/* rn-carousel customizations */
+.rn-carousel-container {
+  overflow: visible;
+}
+
+.rn-carousel-slides {
+  overflow: hidden !important;
+  margin-left: 614px;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
 .rn-carousel-control {
-  font-size: 75px;
+  font-size: 275px;
   position: absolute;
-  top: 45%;
-  margin-top: -35px;
+  top: 15%;
   opacity: 1;
   cursor: pointer;
   color:  #E9CAA7;
   user-select: none;
 }
 
+.rn-carousel-control-prev {
+    left: -1em !important;
+  }
+  .rn-carousel-control-next {
+    right: -1em !important;
+  }
+
 .rn-carousel-control:hover {
     color: #81562C;
+}
+
+.rn-carousel-slide {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
 }
 
 .error {
@@ -90,28 +109,49 @@ body {
   text-align: center;
 }
 
-.modal-body label {
-    padding-right: 15px;
-}
-
-.modal-body .control-label {
-    font-size: 18px;
-}
-
-.rn-carousel-slide {
-  -webkit-backface-visibility: visible !important;
-  -ms-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-}
 .card-player-class {
-    width: 195px;
-    height: 75px;
-    position: relative;
-    top: 445px;
-    left: 56px;
-    visibility: hidden;
+  width: 195px;
+  height: 75px;
+  position: relative;
+  top: 445px;
+  left: 56px;
+  visibility: hidden;
 }
 
 .card-player-class.active {
   visibility: visible;
+  animation: fadein 1s ease-in-out;
 }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.filter-box {
+  border: 1px solid #dddddd !important;
+  margin-left: 10px;
+  border-radius: 3px;
+  background-color: #f5f5f5; 
+}
+
+.filter-box:hover {
+  background-color: #e8e8e8; 
+}
+
+.filter-title {
+  font-size: 1em !important;
+  width: auto;
+  padding:0 10px;
+  border-bottom: none;
+  margin-bottom: 0; 
+}
+
+.btn-filter {
+  height: 33px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 73px;  
+}
+
+.center-block {float: none !important}

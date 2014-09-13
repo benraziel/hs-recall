@@ -23,9 +23,9 @@ angular.module('hearthstoneApp')
 	  						return;
 	  					}
 
-				                        if (!card.playerClass) {
-				                            card.playerClass = 'Neutral';
-				                        }
+				        if (!card.playerClass) {
+				            card.playerClass = 'Neutral';
+				        }
 
 	  					card.category = categories[i];
 	  					card.active = false;
@@ -36,24 +36,28 @@ angular.module('hearthstoneApp')
 	  			return result;
 	  		},
 
+	  		getRarityValue: function(filterRarity, elementRarity) {
+	  			var value = false;
+	  			filterRarity.forEach(function(item) {
+	  				if (item.title === elementRarity) {
+	  					value = item.checked;
+	  				} 
+	  			});
+	  			return value;
+	  		},
+
             filterCards: function(cards, filter) {
                 var result = [];
 
                 cards.forEach(function(element, index, array) {
-                    //console.log("filter class: ",filter.class);
-                    //console.log("element class: ",element.playerClass);
-                    //console.log("filter.category[element.category]: ",filter.category[element.category]);
-
                     if (filter.type[element.type] &&
                         (filter.class[element.playerClass] || filter.class["Neutral"]) &&
                         filter.category[element.category] &&
-                        filter.rarity[element.rarity]) {
+                        myService.getRarityValue(filter.rarity, element.rarity)) {
 
-                        result.push(element)
+                    	result.push(element)
                     }
                 });
-
-                console.log("number of cards after filter: ",result.length);
                 return result;
             },
 
