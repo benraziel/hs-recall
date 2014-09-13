@@ -32,17 +32,19 @@
         <ul rn-carousel rn-carousel-buffered rn-carousel-control
           class="my-slider rn-carousel-slides flip-container"
           >
-         <li class="card"
+         <li
             ng-repeat="card in cards"
-            ng-class="{'flipped': (card.active)}"
             ng-click="card.active = !card.active">
+            <div class="card" ng-class="{'flipped': (card.active)}">
               <div class="card-back"
               ng-style="{'background-image': 'url(images/'+card.type+'.png)'}"></div>
               <div class="card-front-name"
               ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
               <div class="card-front"
               ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
-              <div class="card-player-class"
+            </div>
+            <div class="card-player-class"
+            ng-class="{'active': (card.active)}"
               ng-style="{'background-image': 'url(images/'+card.playerClass+'.jpg)'}"></div>
          </li>
         </ul>
