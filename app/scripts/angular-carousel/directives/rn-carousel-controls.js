@@ -1,6 +1,6 @@
 angular.module('angular-carousel')
 
-.directive('rnCarouselControls', [function() {
+.directive('rnCarouselControls', ['$rootScope', function($rootScope) {
   return {
     restrict: 'A',
     replace: true,
@@ -10,10 +10,18 @@ angular.module('angular-carousel')
     },
     link: function(scope, element, attrs) {
       scope.prev = function() {
-        if (scope.index > 0) scope.index--;
+        if (scope.index > 0){
+          scope.index--;
+          $rootScope.$broadcast('cardChange');  
+        }
+        
       };
       scope.next = function() {
-        if (scope.index < scope.items.length-1) scope.index++;
+        if (scope.index < scope.items.length-1) {
+          scope.index++;
+          $rootScope.$broadcast('cardChange');
+        } 
+        
       };
     },
     templateUrl: 'carousel-controls.html'

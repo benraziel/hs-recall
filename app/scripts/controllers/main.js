@@ -2,8 +2,8 @@
 
 var hsApp = angular.module('hearthstoneApp');
 
-hsApp.controller('MainCtrl', ['$scope', '$http', 'HearthstoneService', '$timeout', '$modal',
-    function ($scope, $http, HearthstoneService, $timeout, $modal) {
+hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneService', '$timeout', '$modal',
+    function ($scope, $rootScope, $http, HearthstoneService, $timeout, $modal) {
 	$scope.categories = ['Reward', 'Promotion', 'Expert', 'Basic', 'Curse of Naxxramas'];
 
     HearthstoneService.getData().then(function(data) {
@@ -38,4 +38,10 @@ hsApp.controller('MainCtrl', ['$scope', '$http', 'HearthstoneService', '$timeout
 
         $scope.cards = HearthstoneService.shuffle(HearthstoneService.filterCards($scope.allCards, $scope.activeFilter));
     };
+
+    $rootScope.$on('cardChange', function() {
+        for(var i = 0; i < $scope.cards.length; i++) {
+            $scope.cards[i].active = false;
+        }
+    });
 }]);
