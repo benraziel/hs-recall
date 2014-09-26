@@ -69,11 +69,20 @@ body {
   overflow: visible;
 }
 
+/*.rn-carousel-slides {*/
+  /*overflow: hidden !important;*/
+  /*margin-left: 614px;*/
+/*}*/
+
 .rn-carousel-slides {
-  overflow: hidden !important;
-  margin-left: 614px;
-  -webkit-transform: none !important;
-  transform: none !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    white-space: nowrap;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
 }
 
 .rn-carousel-control {

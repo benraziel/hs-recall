@@ -52,7 +52,8 @@
                   <button class="btn btn-primary btn-filter" ng-click="changeFilter()">Filter</button> 
     </div>
       <div class="col-md-6 col-md-offset-4">
-        <ul rn-carousel rn-carousel-buffered rn-carousel-control
+          <div>
+          <ul rn-carousel rn-carousel-buffered rn-carousel-control rn-carousel-swipe="true"
           class="my-slider rn-carousel-slides flip-container"
           >
          <li
@@ -71,6 +72,7 @@
               ng-style="{'background-image': 'url(images/'+card.playerClass+'.jpg)'}"></div>
          </li>
         </ul>
+        </div>
     </div>
   </div>
   </div>
@@ -90,8 +92,14 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
-    <!-- endbower -->
+
+    <script src="bower_components/angular-carousel/src/angular-carousel.js"></script>
+    <script src="bower_components/angular-carousel/src/directives/rn-carousel.js"></script>
+    <script src="bower_components/angular-carousel/src/directives/rn-carousel-controls.js"></script>
+    <script src="bower_components/angular-carousel/src/directives/rn-carousel-indicators.js"></script>
+    <script src="bower_components/angular-carousel/src/directives/rn-carousel-auto-slide.js"></script>
+    <script src="bower_components/angular-carousel/src/directives/sliceFilter.js"></script>
+  <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
