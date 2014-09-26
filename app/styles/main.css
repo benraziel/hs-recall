@@ -1,6 +1,7 @@
 /* Space out content a bit */
 header > h1 {
     margin: 10px 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* card content*/
