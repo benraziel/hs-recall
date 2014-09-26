@@ -35,7 +35,7 @@ hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneServi
         if (JSON.stringify($scope.prevFilter) == JSON.stringify($scope.activeFilter)) {
             return; // nothing in the filter changed
         }
-
+        $rootScope.$broadcast('filterChanged');  
         $scope.cards = HearthstoneService.shuffle(HearthstoneService.filterCards($scope.allCards, $scope.activeFilter));
     };
 
