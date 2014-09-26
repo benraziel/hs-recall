@@ -1,8 +1,8 @@
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+header > h1 {
+    margin: 5px 0;
 }
+
 /* card content*/
 .flip-container {
   margin-top: 100px;
@@ -66,11 +66,11 @@ body {
 }
 
 .card-player-class {
-  width: 195px;
-  height: 75px;
+  width: 130px;
+  height: 50px;
   position: relative;
   top: 445px;
-  left: 56px;
+  left: 88px;
    visibility: hidden;
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
@@ -88,7 +88,7 @@ body {
 
 /* rn-carousel customizations */
 .rn-carousel-container {
-  overflow: visible;
+  overflow: hidden;
 }
 
 /*.rn-carousel-slides {*/
@@ -115,13 +115,17 @@ body {
   cursor: pointer;
   color:  #E9CAA7;
   user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 
 .rn-carousel-control-prev {
-    left: -1em !important;
+    left: -0.7em !important;
   }
   .rn-carousel-control-next {
-    right: -1em !important;
+    left: 1.4em !important;
   }
 
 .rn-carousel-control:hover {
@@ -133,6 +137,10 @@ body {
   -ms-backface-visibility: visible !important;
   backface-visibility: visible !important;
 }
+
+/*.carousel-card-item {*/
+    /*margin: 0 153px 0 154px;*/
+/*}*/
 
 /* filter-box content*/
 .filter-box {
