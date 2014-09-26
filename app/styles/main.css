@@ -3,7 +3,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
+/* card content*/
 .flip-container {
   margin-top: 100px;
   position:relative;
@@ -43,6 +43,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 
 .card-back {
@@ -62,6 +63,27 @@ body {
   transform: rotateY(180deg);
   background-repeat: no-repeat;
   z-index: 2;
+}
+
+.card-player-class {
+  width: 195px;
+  height: 75px;
+  position: relative;
+  top: 445px;
+  left: 56px;
+   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.card-player-class.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.card-area-container {
+  padding-left: 3%;
 }
 
 /* rn-carousel customizations */
@@ -86,7 +108,7 @@ body {
 }
 
 .rn-carousel-control {
-  font-size: 275px;
+  font-size: 27.5rem;
   position: absolute;
   top: 15%;
   opacity: 1;
@@ -112,31 +134,7 @@ body {
   backface-visibility: visible !important;
 }
 
-.error {
-  font-size: 24px;
-  color: red;
-  text-align: center;
-}
-
-.card-player-class {
-  width: 195px;
-  height: 75px;
-  position: relative;
-  top: 445px;
-  left: 56px;
-  visibility: hidden;
-}
-
-.card-player-class.active {
-  visibility: visible;
-  animation: fadein 1s ease-in-out;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
+/* filter-box content*/
 .filter-box {
   border: 1px solid #dddddd !important;
   margin-left: 10px;
@@ -157,10 +155,31 @@ body {
 }
 
 .btn-filter {
-  height: 33px;
+  height: 32px;
+  float: left;
   margin-left: 10px;
   margin-top: 10px;
-  width: 73px;  
+  width: 64px; 
 }
 
-.center-block {float: none !important}
+.filter-container {
+  padding-left: 14%;
+}
+
+/* general */
+.error {
+  font-size: 24px;
+  color: red;
+  text-align: center;
+}
+
+/* animations */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
