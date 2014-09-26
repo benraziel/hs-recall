@@ -25,7 +25,7 @@
   <div class="container" ng-controller="MainCtrl">
     <div class="row">
       <header class="col-xs-12 text-center">
-        <h1>Hearthstone Recall</h1>
+        <h1>Hearthstone card Memorizer</h1>
       </header>
       <div class="col-xs-12 text-center filter-container">
         <fieldset class="filter-box col-xs-4">
@@ -56,7 +56,7 @@
           <ul rn-carousel rn-carousel-buffered rn-carousel-control
           class="my-slider rn-carousel-slides flip-container"
           >
-            <li class="carousel-card-item"
+            <li
             ng-repeat="card in cards"
             ng-click="card.active = !card.active">
               <div class="card" ng-class="{'flipped': (card.active)}">
@@ -93,7 +93,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-
+    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -101,10 +101,10 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/factory/factory.js"></script>
     <script src="scripts/angular-carousel/angular-carousel.js"></script>
-    <script src="scripts/angular-carousel/directives/rn-carousel.js"></script>
     <script src="scripts/angular-carousel/directives/rn-carousel-auto-slide.js"></script>
     <script src="scripts/angular-carousel/directives/rn-carousel-controls.js"></script>
     <script src="scripts/angular-carousel/directives/rn-carousel-indicators.js"></script>
+    <script src="scripts/angular-carousel/directives/rn-carousel.js"></script>
     <script src="scripts/angular-carousel/directives/sliceFilter.js"></script>
     <!-- endbuild -->
 </body>
