@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Hearthstone Recall - Memorize all the cards in the game with ease</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -30,30 +30,22 @@
         <h1>Hearthstone Recall</h1>
       </header>
       <div class="col-xs-12 text-center filter-container">
-        <fieldset class="filter-box col-xs-4">
-          <legend class="filter-title">Type</legend>
-          <label ng-repeat="(label,enabled) in activeFilter.type" class="checkbox-inline">
-            <input type="checkbox" ng-model="activeFilter.type[label]"/> {{label}}
-          </label>
-        </fieldset>
-        <fieldset class="filter-box col-xs-5">
-          <legend class="filter-title">Rarity</legend>
-          <label ng-repeat="item in activeFilter.rarity" 
-          class="checkbox-inline"
-          ng-style="{'color': item.color}">
-          <input type="checkbox" ng-model="item.checked"/> {{item.title}}
-          </label>
-        </fieldset>
-        <button class="btn btn-primary btn-filter" ng-click="changeFilter()">Filter</button> 
-        <fieldset class="filter-box col-xs-10">
-          <legend class="filter-title">Class</legend>
-          <label ng-repeat="(label,enabled) in activeFilter.class" 
-          class="checkbox-inline">
-          <input type="checkbox" ng-model="activeFilter.class[label]"/> {{label}}
-          </label>
+        <fieldset class="filter-box">
+          <label for="cardClass">Class</label>
+          <select name="cardClass" id="cardClass" ng-model="activeFilter.class" ng-change="changeFilter()"
+                  ng-options="item for item in classes"></select>
+          <label for="cardType">Type</label>
+          <select name="cardType" id="cardType" ng-model="activeFilter.type" ng-change="changeFilter()"
+                  ng-options="item for item in types"></select>
+          <label for="cardRarity">Rarity</label>
+          <select name="cardRarity" id="cardRarity" ng-model="activeFilter.rarity" ng-change="changeFilter()"
+                  ng-options="item for item in rarities"></select>
+          <label for="cardCategory">Category</label>
+          <select name="cardCategory" id="cardCategory" ng-model="activeFilter.category" ng-change="changeFilter()"
+                  ng-options="item for item in categories"></select>
         </fieldset>
       </div>
-      <div class="col-xs-12 text-center">
+      <div class="col-xs-12 text-center" id="main-view">
         <div class="col-xs-6 col-xs-offset-4 card-area-container">
           <ul rn-carousel rn-carousel-buffered rn-carousel-control
           class="my-slider rn-carousel-slides flip-container"

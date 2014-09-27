@@ -28,7 +28,12 @@ angular.module('hearthstoneApp')
 				        }
 
 	  					card.category = categories[i];
-	  					card.active = false;
+
+                        if (card.category === 'Curse of Naxxramas') {
+                            card.category = 'Naxxramas';
+                        }
+
+                        card.active = false;
 
 	  					result.push(card);
 	  				});
@@ -50,12 +55,13 @@ angular.module('hearthstoneApp')
                 var result = [];
 
                 cards.forEach(function(element, index, array) {
-                    if (filter.type[element.type] &&
-                        (filter.class[element.playerClass] || filter.class["Neutral"]) &&
-                        filter.category[element.category] &&
-                        myService.getRarityValue(filter.rarity, element.rarity)) {
+                    var typeMatch = (filter.type === 'All') || (filter.type === element.type);
+                    var classMatch = (filter.class === 'All') || (filter.class === element.playerClass);
+                    var categoryMatch = (filter.category === 'All' || (filter.category === element.category));
+                    var rarityMatch = (filter.rarity === 'All') || (filter.rarity === element.rarity);
 
-                    	result.push(element)
+                    if (typeMatch && classMatch && categoryMatch && rarityMatch) {
+                        result.push(element)
                     }
                 });
                 return result;

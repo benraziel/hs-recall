@@ -453,7 +453,6 @@
                     });
 
                     $rootScope.$on('filterChanged', function() {
-                        console.log('im here');
                         scope.carouselIndex = 0;
                         scope.carouselBufferIndex = 0;    
                     });
