@@ -130,6 +130,15 @@ header > h1 {
   color:  #E9CAA0;
 }
 
+@media (max-width: 768px) {
+    .rn-carousel-control-prev {
+      display: none;
+    }
+    .rn-carousel-control-next {
+      display: none;
+    }
+}
+
 .rn-carousel-control-prev {
     left: 0.95em !important;
   }
