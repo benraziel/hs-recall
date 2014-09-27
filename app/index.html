@@ -62,6 +62,8 @@
             ng-repeat="card in cards"
             ng-click="card.active = !card.active">
               <div class="card" ng-class="{'flipped': (card.active)}">
+                <div class="card-loading"
+                ng-style="{'background-image': 'url(images/'+card.type+'-loading.jpg)'}"></div>
                 <div class="card-back"
                 ng-style="{'background-image': 'url(images/'+card.type+'.png)'}"></div>
                 <div class="card-front-name"

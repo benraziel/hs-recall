@@ -12,7 +12,7 @@ header > h1 {
   perspective:3000;
 }
 
-.flip-container, .card-front, .card-back, .card-front-name {
+.flip-container, .card-front, .card-back, .card-front-name, .card-loading {
   width: 307px;
   height: 520px;
 }
@@ -36,7 +36,7 @@ header > h1 {
   position: relative;
 }
 
-.card-front, .card-back, .card-front-name {
+.card-front, .card-back, .card-front-name, .card-loading {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
@@ -45,6 +45,11 @@ header > h1 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+.card-loading {
+    z-index: 0;
+    background-repeat: no-repeat;
 }
 
 .card-back {
