@@ -458,6 +458,24 @@
                         scope.carouselBufferIndex = 0;    
                     });
 
+                    angular.element($document).bind("keyup", function(event) {
+                        var ARROWS_DOWN = 40;
+                        var ARROWS_UP = 38;
+                        var NUMPAD_DOWN = 98;
+                        var NUMPAD_CENTER = 101;
+                        var NUMPAD_UP = 104;
+                        var WASD_DOWN = 83;
+                        var WASD_UP = 87;
+                        var SPACEBAR = 32;
+
+                        if ((event.which === ARROWS_DOWN) || (event.which === ARROWS_UP) ||
+                            (event.which === NUMPAD_DOWN) || (event.which === NUMPAD_CENTER) || (event.which === NUMPAD_UP) ||
+                            (event.which === WASD_DOWN) || (event.which === WASD_UP)||
+                            (event.which === SPACEBAR)) {
+                            $rootScope.$broadcast('cardFlipKeyup', {carouselIndex: scope.carouselIndex});
+                            scope.$apply();
+                        }
+                    });
                 };
             }
         };

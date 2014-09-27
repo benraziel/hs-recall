@@ -27,19 +27,10 @@ angular.module('angular-carousel')
       angular.element($document).bind("keyup", function(event) {
         var ARROWS_LEFT = 37;
         var ARROWS_RIGHT = 39;
-        var ARROWS_DOWN = 40;
-        var ARROWS_UP = 38;
-
         var NUMPAD_LEFT = 100;
         var NUMPAD_RIGHT = 102;
-        var NUMPAD_DOWN = 98;
-        var NUMPAD_CENTER = 101;
-        var NUMPAD_UP = 104;
-
         var WASD_LEFT = 65;
         var WASD_RIGHT = 68;
-        var WASD_DOWN = 83;
-        var WASD_UP = 87;
 
         if ((event.which === ARROWS_LEFT) || (event.which === NUMPAD_LEFT) || (event.which === WASD_LEFT)) {
           scope.prev();
@@ -49,7 +40,6 @@ angular.module('angular-carousel')
           scope.next();
           scope.$apply();
         }
-
       });
     },
     templateUrl: 'carousel-controls.html'

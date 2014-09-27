@@ -44,4 +44,10 @@ hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneServi
             $scope.cards[i].active = false;
         }
     });
+
+    $rootScope.$on('cardFlipKeyup', function(event, data) {
+        var currentCard = $scope.cards[data.carouselIndex];
+
+        currentCard.active = !currentCard.active;
+    });
 }]);
