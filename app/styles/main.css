@@ -17,10 +17,20 @@ header > h1 {
 }
 
 body {
-    background-image: url('../images/hs-blur-bg.jpg');
-    background-size: cover;
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
 }
 
+html {
+    background-image: url('../images/hs-blur-bg.jpg');
+    background-size: cover;
+    height: 100%;
+}
+body {
+  background: transparent;
+}
 /* card content*/
 .flip-container {
   margin-top: 100px;
