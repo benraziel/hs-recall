@@ -55,13 +55,13 @@
             ng-click="card.active = !card.active">
               <div class="card" ng-class="{'flipped': (card.active)}">
                 <div class="card-loading"
-                ng-style="{'background-image': 'url(images/'+card.type+'-loading.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/'+card.type+'-loading.png)'}"></div>
                 <div class="card-back"
                 ng-style="{'background-image': 'url(images/'+card.type+'.png)'}"></div>
                 <div class="card-front-name"
-                ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/cards/'+card.id+'.png)'}"></div>
                 <div class="card-front"
-                ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/cards/'+card.id+'.png)'}"></div>
               </div>
               <div class="card-player-class"
               ng-class="{'active': (card.active)}"
