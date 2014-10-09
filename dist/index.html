@@ -8,14 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Hearthstone Recall - Memorize all the cards in the game with ease</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=500, initial-scale=0.75">
+  <meta name="viewport" content="width=device-width, height=550, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="stylesheet" href="styles/befd5014.vendor.css"/>
-  <link rel="stylesheet" href="styles/6a9aa0e9.main.css"/>
+  <link rel="stylesheet" href="styles/18a06c60.main.css"/>
 </head>
 <body ng-app="hearthstoneApp">
-  <div class="container" ng-controller="MainCtrl">
+  <div class="container " ng-controller="MainCtrl">
     <div class="row">
       <header class="col-xs-12 text-center">
         <h1>Hearthstone Recall</h1>
@@ -46,13 +46,13 @@
             ng-click="card.active = !card.active">
               <div class="card" ng-class="{'flipped': (card.active)}">
                 <div class="card-loading"
-                ng-style="{'background-image': 'url(images/'+card.type+'-loading.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/'+card.type+'-loading.png)'}"></div>
                 <div class="card-back"
                 ng-style="{'background-image': 'url(images/'+card.type+'.png)'}"></div>
                 <div class="card-front-name"
-                ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/cards/'+card.id+'.png)'}"></div>
                 <div class="card-front"
-                ng-style="{'background-image': 'url(images/'+card.id+'.jpg)'}"></div>
+                ng-style="{'background-image': 'url(images/cards/'+card.id+'.png)'}"></div>
               </div>
               <div class="card-player-class"
               ng-class="{'active': (card.active)}"
@@ -60,7 +60,7 @@
               </div>
             </li>
           </ul>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
