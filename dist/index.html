@@ -11,7 +11,12 @@
   <meta name="viewport" content="width=device-width, height=550, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="styles/befd5014.vendor.css"/>
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
   <link rel="stylesheet" href="styles/18a06c60.main.css"/>
 </head>
 <body ng-app="hearthstoneApp">
@@ -56,7 +61,7 @@
               </div>
               <div class="card-player-class"
               ng-class="{'active': (card.active)}"
-              ng-style="{'background-image': 'url(images/'+card.playerClass+'.jpg)'}">
+              ng-style="{'background-image': 'url(images/'+card.playerClass+'.png)'}">
               </div>
             </li>
           </ul>
@@ -76,7 +81,20 @@
       ga('create', 'UA-55196106-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <script src="scripts/vendor.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
     <script src="scripts/scripts.js"></script>
 </body>
 </html>

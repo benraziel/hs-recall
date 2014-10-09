@@ -79,8 +79,7 @@
 
                     // add a wrapper div that will hide the overflow
                     var carousel = iElement.wrap("<div id='carousel-" + carouselId +"' class='rn-carousel-container'></div>"),
-                        container = carousel.parent(),
-                        containerParent =  container.parent();
+                        container = carousel.parent();
 
                     // if indicator or controls, setup the watch
                     if (angular.isDefined(iAttributes.rnCarouselIndicator) || angular.isDefined(iAttributes.rnCarouselControl)) {
@@ -112,7 +111,7 @@
                     // enable carousel controls
                     if (angular.isDefined(iAttributes.rnCarouselControl)) {
                         var controls = $compile("<div id='carousel-" + carouselId +"-controls' index='indicatorIndex' items='carouselIndicatorArray' rn-carousel-controls class='rn-carousel-controls'></div>")(scope);
-                        containerParent.append(controls);
+                        container.append(controls);
                     }
 
                     scope.carouselBufferIndex = 0;
@@ -184,7 +183,7 @@
                         } else {
                             containerWidth = slides[0].getBoundingClientRect().width;
                         }
-
+                        // console.log('getCarouselWidth', containerWidth);
                         return containerWidth;
                     }
 
@@ -451,6 +450,7 @@
                         winEl.unbind('orientationchange', onOrientationChange);
                         winEl.unbind('resize', onOrientationChange);
                     });
+
                 };
             }
         };
