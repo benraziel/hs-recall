@@ -233,17 +233,20 @@ body {
   width: 64px;
 }
 
-.filter-container {
-
+.creators {
+  padding-right: 30px;
+  padding-left: 30px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* general */
-.error {
-  font-size: 24px;
-  color: red;
-  text-align: center;
+.creators > a {
+  text-decoration: none;
+  color: #2a5296;
 }
 
+.creators > a:hover {
+  color: #2a3796;
+}
 /* animations */
 @keyframes fadein {
     from { opacity: 0; }
