@@ -21,19 +21,6 @@ hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneServi
             'type': 'All',
             'category': 'All'
         };
-
-//        $scope.activeFilter = {
-//            'category': {'Basic': true, 'Expert': true, 'Curse of Naxxramas': true, 'Reward': true, 'Promotion': true},
-//            'class': {'Neutral': true, 'Mage': true, 'Warrior': true, 'Shaman': true, 'Priest': true, 'Paladin': true, 'Druid': true, 'Hunter': true, 'Warlock': true, 'Rogue': true},
-//            'rarity': [
-//                {'checked': true,'title': 'Free', 'color': '#000000'},
-//                {'checked': true,'title': 'Common', 'color': '#939393'},
-//                {'checked': true,'title': 'Rare', 'color': '#0070dd'},
-//                {'checked': true,'title': 'Epic', 'color': '#a335ee'},
-//                {'checked': true,'title': 'Legendary', 'color': '#ff8000'}
-//            ],
-//            'type': {'Minion': true, 'Spell': true, 'Weapon': true}
-//        };
     });
 
     $scope.activeFilter = function () {
@@ -41,7 +28,8 @@ hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneServi
     };
 
     $scope.changeFilter = function (newFilter) {
-        $rootScope.$broadcast('filterChanged');  
+        $rootScope.$broadcast('filterChanged');
+        $('card-area-container').focus();
         $scope.cards = HearthstoneService.shuffle(HearthstoneService.filterCards($scope.allCards, $scope.activeFilter));
     };
 
