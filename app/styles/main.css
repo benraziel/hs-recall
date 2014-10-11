@@ -317,7 +317,12 @@ body {
 
   .flip-container, .card-front, .card-back, .card-front-name, .card-loading {
     width: 245px;
-    height: 416px;
+    height: 395px;
     background-size: contain;
+  }
+
+  .creators {
+    padding: 3px 3px;
+    margin-top: 3px;
   }
 }
