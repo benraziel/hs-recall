@@ -4,18 +4,7 @@ header > h1 {
     font-family: 'Open Sans', sans-serif;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  header > h1 {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  header > h1 {
     font-size: 48px;
-  }
 }
 
 body {
@@ -204,6 +193,7 @@ body {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
+  z-index: 1000;
 }
 
 .filter-box > label {
@@ -259,4 +249,75 @@ body {
 @keyframes fadeout {
     from { opacity: 1; }
     to   { opacity: 0; }
+}
+
+.filter-class-label:after {
+    content: "Class ";
+}
+
+.filter-type-label:after {
+    content: "Type ";
+}
+
+.filter-rarity-label:after {
+    content: "Rarity ";
+}
+
+.filter-category-label:after {
+    content: "Category ";
+}
+
+/* Mobile design adjustments */
+@media (max-width: 768px) {
+  header > h1 {
+    font-size: 16px;
+  }
+
+  .filter-box {
+    margin-top: 0px;
+    padding: 3px 3px;
+  }
+
+  .filter-box > select {
+    max-width: 50px;
+    margin: 0px 3px;
+  }
+
+  .card-area-container {
+    margin-top: -12px;
+  }
+
+  .row > header {
+    height: 32px;
+  }
+
+  .filter-class-label:after {
+    content: "C";
+  }
+
+  .filter-type-label:after {
+    content: "T";
+  }
+
+  .filter-rarity-label:after {
+    content: "R";
+  }
+
+  .filter-category-label:after {
+    content: "C";
+  }
+
+  .card-player-class {
+    width: 100px;
+    height: 38px;
+    background-size: contain;
+    left: 73px;
+    top: 355px;
+  }
+
+  .flip-container, .card-front, .card-back, .card-front-name, .card-loading {
+    width: 245px;
+    height: 416px;
+    background-size: contain;
+  }
 }

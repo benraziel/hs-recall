@@ -31,16 +31,16 @@
       </header>
       <div class="col-xs-12 text-center filter-container">
         <fieldset class="filter-box">
-          <label for="cardClass">Class</label>
+          <label for="cardClass" class="filter-class-label"></label>
           <select name="cardClass" id="cardClass" ng-model="activeFilter.class" ng-change="changeFilter()"
                   ng-options="item for item in classes"></select>
-          <label for="cardType">Type</label>
+          <label for="cardType" class="filter-type-label"></label>
           <select name="cardType" id="cardType" ng-model="activeFilter.type" ng-change="changeFilter()"
                   ng-options="item for item in types"></select>
-          <label for="cardRarity">Rarity</label>
+          <label for="cardRarity" class="filter-rarity-label"></label>
           <select name="cardRarity" id="cardRarity" ng-model="activeFilter.rarity" ng-change="changeFilter()"
                   ng-options="item for item in rarities"></select>
-          <label for="cardCategory">Category</label>
+          <label for="cardCategory" class="filter-category-label"></label>
           <select name="cardCategory" id="cardCategory" ng-model="activeFilter.category" ng-change="changeFilter()"
                   ng-options="item for item in categories"></select>
         </fieldset>
