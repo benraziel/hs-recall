@@ -29,7 +29,12 @@ hsApp.controller('MainCtrl', ['$scope', '$rootScope', '$http', 'HearthstoneServi
 
     $scope.changeFilter = function (newFilter) {
         $rootScope.$broadcast('filterChanged');
-        $('card-area-container').focus();
+
+        $("#cardClass").blur();
+        $("#cardRarity").blur();
+        $("#cardCategory").blur();
+        $("#cardType").blur();
+
         $scope.cards = HearthstoneService.shuffle(HearthstoneService.filterCards($scope.allCards, $scope.activeFilter));
     };
 
